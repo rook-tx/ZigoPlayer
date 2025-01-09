@@ -1,7 +1,7 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from '../pages/home'
-import PlayerScreen from '../pages/album'
+import PlayerScreen from '../pages/player'
 import BandScreen from '../pages/band'
 
 export type StackParamsList = {
