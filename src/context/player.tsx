@@ -64,7 +64,7 @@ const playerReducer = (
 const PlayerContext = createContext<PlayerState>(defaultPlayerState)
 const PlayerDispatchContext = createContext<
   Dispatch<{
-    type: 'update' | 'logout'
+    type: 'update' | 'logout' | 'playpause' | 'play' | 'pause' | 'playreport'
     player?: Partial<PlayerState>
   }>
 >(() => {})

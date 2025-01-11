@@ -16,11 +16,9 @@ const AppNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
-      screenOptions={
-        {
-          // headerShown: false,
-        }
-      }>
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen
         name="Home"
         component={HomeScreen}

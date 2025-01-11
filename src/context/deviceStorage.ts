@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-// import { UserState } from './user'
 import { PlayerState } from './player'
+import { DiscoState } from './disco'
 
-type contextKey = 'user' | 'player'
+type contextKey = 'disco' | 'player'
 
 export const getDeviceData = async (key: contextKey) => {
   try {
@@ -17,7 +17,7 @@ export const getDeviceData = async (key: contextKey) => {
 
 export const storeDeviceData = async (
   key: contextKey,
-  value: PlayerState, // UserState | ,
+  value: DiscoState | PlayerState,
 ) => {
   try {
     const jsonValue = JSON.stringify(value)
