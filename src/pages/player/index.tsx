@@ -3,22 +3,15 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { StackParamsList } from '../../navigation'
 import PlayControls from '../../components/player/PlayControls'
-import { useDisco } from '../../context/disco'
-import discoData from '../../content/disco.json'
+import { allTracks, useDisco } from '../../context/disco'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 type Props = NativeStackScreenProps<StackParamsList, 'Player'>
 
-const allTracks = Object.keys(discoData)
-  .map(album => discoData[album].tracks)
-  .flat()
-
-console.log(allTracks)
-
 function PlayerScreen({ navigation }: Props) {
   const insets = useSafeAreaInsets()
 
-  const { idx } = useDisco()
+  const { idx, album } = useDisco()
   const [trackName, setTrackName] = useState('')
 
   useEffect(() => {
@@ -31,7 +24,7 @@ function PlayerScreen({ navigation }: Props) {
         ...styles.screen,
         paddingTop: insets.top,
       }}>
-      <Text>Player Screen</Text>
+      <Text>{album}</Text>
       <Text>{trackName}</Text>
       <PlayControls />
       <Button onPress={() => navigation.popToTop()} title="Go Home" />

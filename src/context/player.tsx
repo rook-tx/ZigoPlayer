@@ -75,8 +75,8 @@ const PlayerProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const goFetch = async () => {
       const storedPlayer = await getDeviceData('player')
-      console.log('stored player', storedPlayer)
       if (storedPlayer) {
+        console.log('stored player', storedPlayer)
         setPlayer({
           type: 'update',
           player: storedPlayer,
