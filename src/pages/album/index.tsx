@@ -21,7 +21,7 @@ function AlbumScreen({ navigation, route }: Props) {
   const renderAlbum = useMemo(() => albums[params.album], [params.album])
 
   return (
-    <ImageBackground source={renderAlbum.bgImage}>
+    <ImageBackground source={renderAlbum.bgImage} blurRadius={12}>
       <ScrollView
         contentContainerStyle={{
           ...styles.screen,
